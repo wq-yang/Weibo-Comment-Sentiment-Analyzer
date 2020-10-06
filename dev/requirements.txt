@@ -1,2 +1,2 @@
-tweepy
+weibo
 google-cloud-language
