@@ -22,4 +22,5 @@ input the url of a piece of weibo, return the overall sentiment of comments (ave
 ### code
 
 see in directory "dev"
+
 still working on it. as my applications for Twitter Developer accout was declined twice, it took me some time, and after that I decided to analyze weibo(a social network platform in China, is similar to twitter).
