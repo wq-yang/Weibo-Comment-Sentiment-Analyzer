@@ -2,18 +2,21 @@
 # reference: [doc of weibo package](http://weibo.lxyu.net/)
 
 from weibo import Client
-# from config.weiboAPIConfig import *
-# from idTranslation import mid2id, id2mid
+from config.weiboAPIConfig import *
+import webbrowser
 
-def getComment(API_KEY, API_SECRET, REDIRECT_URI):
+def init():
     client = Client(API_KEY, API_SECRET, REDIRECT_URI)
-    print("please paste the URL to your browser"+client.authorize_url+", and authorize")
+    webbrowser.open_new(client.authorize_url)
+    print("Please authorize... If your browser does not open automatically,"\
+        "please paste this URL to your browser manually: {}...".format(client.authorize_url))
     client.set_code(input("input your code:"))
+    return Client(API_KEY, API_SECRET, REDIRECT_URI, client.token)
 
+def getWeibo(client, id):
+    return client.get('statuses/show', id = id)["text"]
 
-    comments = client.get('comments/show', id=4545555559354630, count=5)["comments"]
-    # print(type(comments), comments)
-
-    # for comment in comments:
-    #     print(comment["text"])
-    return comments
+def getComment(client, id, count):
+    comments = client.get('comments/show', id = id, count = count)["comments"]
+    # print([comment["text"] for comment in comments if "text" in comment])
+    return [comment["text"] for comment in comments if "text" in comment]

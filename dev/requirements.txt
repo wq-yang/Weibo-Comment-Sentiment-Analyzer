@@ -1,2 +1,4 @@
 weibo
 google-cloud-language
+request
+webbrowser

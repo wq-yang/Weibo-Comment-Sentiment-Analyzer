@@ -2,25 +2,32 @@
 
 Project 2 for EC601
 
-## Phase I: practice Twitter API and Google NLP API
+### Description
 
-### code
-
-see in directory "practice"
-
-
-## Phase II: build my social media analyzer
+- **name:** weibo comment sentiment analyzer
+- **category:** command line tool, written in python
+- **API used:** [Google Natural Language](https://cloud.google.com/natural-language/), [weibo](lxyu.github.io/weibo/) (more concise than other weibo python sdk, and supports python3)
 
 ### MVP
 
-input the url of a piece of weibo, return the overall sentiment of comments (average of the first 50 comments, due to the limit of weibo API), the most negative comment, and the most positive comment.
+Input the id or mid of a piece of weibo, return the overall sentiment of comments (average of the first `count` comments, 50 at most, due to the limit of weibo API), and also return the most negative, the most positive, and the strongest comments.
 
 ### User Story
 
 
 
+### Usage
+
+
+
+
+
+### Example
+
+<div align="center">
+	<img src="example.gif" alt="example" style="zoom:90%;" />
+</div>
+
 ### code
 
 see in directory "dev"
-
-*still working on it. as my applications for Twitter Developer accout was declined twice, it took me some time, and after that I decided to analyze weibo(a social network platform in China, is similar to twitter).*

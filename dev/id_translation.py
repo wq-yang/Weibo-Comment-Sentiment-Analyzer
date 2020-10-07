@@ -5,7 +5,7 @@
 #                   "2146965345" is the UserID, "Jj76HDfz8" is "mid" of this piece of weibo)
 #                   when using weibo API, we must use "id" to refer to this piece of weibo. 
 #                   for the example above, its id is "4545555559354630". 
-#                   mid <-> id can be done with base 62 hash function.
+#                   mid <-> id can be done with base 62 encode.
 
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
