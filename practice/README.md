@@ -2,13 +2,9 @@
 
 ```
 ├─config:                   add your own configurations
-│ ├─twitterAPIConfig.py:    add your own Twitter API config
+│ ├─weiboAPIConfig.py:      add your own Weibo API config
 │ └─GoogleAPIKey.json:      add your own Google API config
-├─twitter.py:               practice Twitter API
-├─googleNLP.py:             practice Google Cloud Natural Language
+├─weibo_API_practice.py:    practice Weibo API
+├─Google_NLP_practice.py:   practice Google Cloud Natural Language
 └─README.md:                README
 ```
-## 
-
-## reference
-[1] 

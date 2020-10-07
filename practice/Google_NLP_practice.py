@@ -1,5 +1,3 @@
-#
-
 # set GOOGLE_APPLICATION_CREDENTIALS
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./practice/config/GoogleAPIKey.json"

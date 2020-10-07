@@ -3,10 +3,8 @@
 
 # set GOOGLE_APPLICATION_CREDENTIALS
 import os
-os.environ["http_proxy"] = "http://127.0.0.1:9910"
-os.environ["https_proxy"] = "http://127.0.0.1:9910"
-# os.environ["HTTP_PROXY"] = "http://127.0.0.1:9910"
-# os.environ["HTTPS_PROXY"] = "http://127.0.0.1:9910"
+# os.environ["http_proxy"] = "http://127.0.0.1:9910"
+# os.environ["https_proxy"] = "http://127.0.0.1:9910"
 
 # suppose you are currently in the dev directory
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./config/GoogleAPIKey.json"

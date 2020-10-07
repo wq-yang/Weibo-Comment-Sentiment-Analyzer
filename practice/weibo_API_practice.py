@@ -1,5 +1,5 @@
 # author: wqyang@bu.edu
-# reference: [doc of weibo package](http://weibo.lxyu.net/)
+# reference: [doc of third-party weibo sdk](http://weibo.lxyu.net/)
 from weibo import Client
 from config.weiboAPIConfig import *
 from idTranslation import mid2id, id2mid
