@@ -1,7 +1,7 @@
 # author: wqyang@bu.edu
 # reference: [doc of third-party weibo sdk](http://weibo.lxyu.net/)
 from weibo import Client
-from config.weiboAPIConfig import *
+from config.Weibo_API_Config import *
 from idTranslation import mid2id, id2mid
 
 client = Client(API_KEY, API_SECRET, REDIRECT_URI)

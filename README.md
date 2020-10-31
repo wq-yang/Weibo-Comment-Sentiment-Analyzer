@@ -2,6 +2,8 @@
 
 Project 2 for EC601
 
+*p.s. Because my application of Twitter Developer Account was rejected (for twice...), I made a comment analyzer for [Weibo](https://www.weibo.com), a Chinese social media platform similar to Twitter.*
+
 ### Description
 
 - **name:** weibo comment sentiment analyzer
@@ -24,13 +26,13 @@ For public relations officer, they can use this tool to know users' opinion to s
 
 ### Usage
 
-- follow instructions on Google Cloud tutorial, create Google Natural Language project, and download configuration file, and name it `GoogleAPIKey.json`.
-- follow instructions on Weibo Open Platform, apply for weibo developer permission, and create a micro-service, get API_KEY and API_SECRET, and store them in `weiboAPIConfig.py`. 
+- follow instructions on Google Cloud tutorial, create Google Natural Language project, and download configuration file, name it as `Google_API_Key.json`, and store it in the `dev/config/` directory.
+- follow instructions on Weibo Open Platform, apply for weibo developer permission, and create a micro-service, get API_KEY and API_SECRET, and store them in `dev/config/Weibo_API_Config.py`. 
 
 - add configuration files to `dev/config`.
-- install dependencies using `pip` command.
+- install dependencies using `pip install -r dev/requirements`.
 
-- run `dev/comment_sentiment_analyze.py`, and follow its instructions.
+- run `python dev/comment_sentiment_analyze.py`, and follow its instructions.
 
 ### Example
 

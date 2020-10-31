@@ -1,6 +1,6 @@
 # set GOOGLE_APPLICATION_CREDENTIALS
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./practice/config/GoogleAPIKey.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./practice/config/Google_API_Key.json"
 
 # example provided by https://cloud.google.com/natural-language/docs/reference/libraries
 # Imports the Google Cloud client library
