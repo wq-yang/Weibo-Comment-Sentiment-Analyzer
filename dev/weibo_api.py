@@ -2,8 +2,8 @@
 # reference: [doc of weibo package](http://weibo.lxyu.net/)
 
 from weibo import Client
-from config.Weibo_API_Config import *
 import webbrowser
+from config.Weibo_API_Config import *
 
 def init():
     """
