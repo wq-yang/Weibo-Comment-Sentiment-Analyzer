@@ -21,6 +21,10 @@ jobs:
         run: ./.github/encrypted_config/decrypt_secret.sh
         env:
           SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+      - name: Test printing your secret (Remove this step in production)
+        run: |
+          ls -lta $HOME/secrets
+          
       - name: Test with pytest
         env: 
           PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
