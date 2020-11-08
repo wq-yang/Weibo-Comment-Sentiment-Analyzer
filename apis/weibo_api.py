@@ -11,7 +11,7 @@ def init():
     Instantiates a client.
 
     Besides the developer's credentials, weibo always a requires live login before using weibo API 
-    to prevent abusing. You can login with a plain weibo account.
+    to prevent abusing. You can login with any plain weibo account.
     """
     # API_KEY = os.getenv('API_KEY')
     # API_SECRET = os.getenv('API_SECRET')

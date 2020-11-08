@@ -6,11 +6,12 @@ Project 2 for EC601
 
 ## Description
 
-- **name:** weibo comment sentiment analyzer
-- **category:** command line tool, written in python
+- **Name:** weibo comment sentiment analyzer
+- **Category:** command line tool, written in python
 - **API used:** 
   - [Google Natural Language](https://cloud.google.com/natural-language/)
   - [weibo](lxyu.github.io/weibo/) (a concise third-party weibo python sdk which support python3)
+- **Language:** python (>=3.6)
 
 ## MVP
 
@@ -41,25 +42,59 @@ For public relations officer, they can use this tool to know users' opinion to s
 </div>
 Analyzed comments of a weibo about Eddie Van Halen's death.
 
-## File Structure
+
 
 ## File Structure
 
 ```
-├─config:                       add your own configurations
-│ ├─Weibo_API_Config.py:        add your own Weibo API config
-│ └─Google_API_Key.json:        add your own Google API config
-├─util:                           
-├─comment_sentiment_analyze.py  the main python script
-├─weibo_api_.py:                practice Weibo API
-├─google_nlp.py:                practice Google Cloud Natural Language
-├─id_translation:               helper function for getting the id of a piece of weibo
-├─requirements.txt:             dependencies
-└─README.md:                    README
-
+├─.github:                            for GitHub
+│ ├─encrypted_config:                 store encrypted credentials
+│ │ ├─Google_API_Key.json.gpg:        encrypted Google API credential
+│ │ └─decrypt_secret.sh:              bash script to decrypt
+│ └─workflows:                        GitHub Actions test
+│   └─python_test.yml:                YAML script
+├─config:                             add your own configurations
+│ ├─Weibo_API_Config.py:              add your own Weibo API config
+│ └─Google_API_Key.json:              add your own Google API config
+├─apis:                               
+│ ├─__init__.py:                      some settings about path
+│ ├─weibo_api_.py:                    Weibo API
+│ └─google_nlp.py:                    Google Cloud Natural Language API
+├─util:                               some functional components
+│ ├─id_translation:                   helper function for getting the id of a piece of weibo
+│ ├─choose_weibo.py:                  receive input, URL/id/mid of weibo, return id
+│ └─get_num.py:                       receive input num of counts, check its validity
+├─comment_sentiment_analyze.py        the main python script
+├─tests:                              tests
+│ ├─test_google_nlp.py
+│ ├─tst_weibo_api.py
+│ └─tst_comment_sentiment_analyze.py
+├─requirements.txt:                   dependencies
+└─README.md:                          README
 ```
 
-### Reference
+## Testing
+
+- Auto-testing with GitHub Actions and Pytest
+
+  Test Google Natural Language API with GitHub Actions and Pytest with different Python versions, see: [test1](https://github.com/wq-yang/EC601-Project2-Project4-Social-Media-Analyzer/actions/runs/352544403), [test2](https://github.com/wq-yang/EC601-Project2-Project4-Social-Media-Analyzer/actions/runs/352547020)
+
+- Manual Test
+
+  Because Weibo API's initialization always needs authorization (user login and authorize to my app, to prevent abusing), it seems to be unable to test it automatically. I tested several cases manually:
+
+  - Normal test: get results.
+  - Invalid Weibo API credentials: Error code 21324 in authorization page, prompt `Authorization failed... Input Y to try again...` after some input.
+  - Invalid URL: prompt `That was not a valid url.`, give an example of valid URL and ask for another try
+  - Invalid amount of comments: 
+    - zero, negative integer or non-numeric input: ask for positive integer
+    - amount that exceeds the available amout of comments: analyzed all available comments
+  - Invalid mid: fetch 0 piece of comments, and return the result
+  - Invalid id: 
+    - Invalid but numeric id: fetch 0 piece of comments, and return the result
+    - non-numeric id: ask for numeric id
+
+## Reference
 
 [1] [Google Natural Language Client Libraries Documentation](https://cloud.google.com/natural-language/docs/reference/libraries)
 

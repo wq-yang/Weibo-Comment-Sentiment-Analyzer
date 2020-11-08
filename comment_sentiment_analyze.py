@@ -7,7 +7,7 @@ from util.get_num import get_num
 def analyze_comments(comments):
     """
     analyze sentiment of comments using Google NLP
-    return 
+    return sentiment results
     """
     # initiate results
     most_positive_comment = { "score":0, "text":"" }

@@ -13,6 +13,10 @@ def init():
     return client
 
 def analyze_sentiment(client, text):
+    """
+    params: client, text to analyze
+    return: sentiment{score, magnitude}
+    """
     document = types.Document(
         content=text,
         type=enums.Document.Type.PLAIN_TEXT

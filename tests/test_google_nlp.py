@@ -13,23 +13,23 @@ def analyze(comment):
     sentiment = google_nlp.analyze_sentiment(nlp_client, comment)
     return sentiment
 
-def test_empty():
+def test_empty():  # empty text case
     sentiment = analyze("")
     assert sentiment == {} or (sentiment.score == 0 and sentiment.magnitude == 0)
 
-def test_negative():
+def test_negative():  # test negative sentiments
     comments = ["Too bad!", "I don't like it", "太糟糕了"]
     for comment in comments:
         sentiment = analyze(comment)
         assert sentiment.score < 0
 
-def test_positive():
+def test_positive():  # # test positive sentiments
     comments = ["excellent!", "brilliant", "can't be better"]
     for comment in comments:
         sentiment = analyze(comment)
         assert sentiment.score > 0
 
-def test_magnitude():
+def test_magnitude():  # test different magnitudes
     comments = ["I have no feelings", "I kind of like it", "I extremely hate it"]
     mag = []
     for comment in comments:
