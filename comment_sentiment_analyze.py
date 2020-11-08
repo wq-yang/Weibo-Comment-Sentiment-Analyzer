@@ -1,5 +1,5 @@
-import google_nlp
-import weibo_api
+from apis import google_nlp
+from apis import weibo_api
 import os
 from util.choose_weibo import choose_weibo
 from util.get_num import get_num
@@ -22,7 +22,7 @@ def analyze_comments(comments):
     }
 
     # Imports the Google Cloud client library.
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./config/Google_API_Key.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/Google_API_Key.json" # for local test
 
     nlp_client = google_nlp.init()
     for comment in comments:  

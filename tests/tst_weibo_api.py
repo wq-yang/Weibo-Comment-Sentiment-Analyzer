@@ -1,8 +1,5 @@
-import sys
-sys.path.append('.')
-import module
-from dev import weibo_api
-from dev.config.Weibo_API_Config import *  # local test
+from apis import weibo_api
+from config.Weibo_API_Config import *  # local test
 
 weibo_client = weibo_api.init()
 

@@ -3,7 +3,8 @@
 
 from weibo import Client
 import webbrowser
-from config.Weibo_API_Config import *
+from config.Weibo_API_Config import *  # local credentials
+import os  # for GitHub Actions test
 
 def init():
     """
@@ -12,7 +13,13 @@ def init():
     Besides the developer's credentials, weibo always a requires live login before using weibo API 
     to prevent abusing. You can login with a plain weibo account.
     """
-    client = Client(API_KEY, API_SECRET, REDIRECT_URI)
+    # API_KEY = os.getenv('API_KEY')
+    # API_SECRET = os.getenv('API_SECRET')
+    # REDIRECT_URI = os.getenv('REDIRECT_URI')
+    try:
+        client = Client(API_KEY, API_SECRET, REDIRECT_URI)
+    except:
+        print("Invalid API Credentials...")
     while True:  # check if authorization succeeds, if not, try again
         try:
             webbrowser.open_new(client.authorize_url)
@@ -21,7 +28,10 @@ def init():
             client.set_code(input("Input your code:\n"))
             break
         except:
-            print("Authorization failed. Please try again...")
+            try_again = input("Authorization failed... Input Y to try again...\n")
+            if  try_again != 'y' and try_again != 'Y':
+                break
+
     return Client(API_KEY, API_SECRET, REDIRECT_URI, client.token)
 
 def get_comments(client, id, count):
