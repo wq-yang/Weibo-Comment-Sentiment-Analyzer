@@ -1,11 +1,8 @@
-import sys
-sys.path.append('.')
-
 from apis import google_nlp
 import os
 import pytest
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/Google_API_Key.json" # local test
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/Google_API_Key.json" # local test
 nlp_client = google_nlp.init()
 
 def analyze(comment):
