@@ -21,14 +21,12 @@ jobs:
         run: ./.github/encrypted_config/decrypt_secret.sh
         env:
           SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
-          
+
       - name: Test with pytest
         env: 
-          PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
           REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
         run: |
-          pwd
+          export GOOGLE_APPLICATION_CREDENTIALS="$HOME/secrets/Google_API_Key.json"
           pytest
