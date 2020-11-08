@@ -1,3 +1,6 @@
+import sys
+sys.path.append('.')
+
 from comment_sentiment_analyze import *
 
 weibo_client = weibo_api.init()

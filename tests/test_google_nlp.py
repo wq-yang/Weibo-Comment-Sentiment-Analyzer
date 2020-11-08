@@ -1,3 +1,6 @@
+import sys
+sys.path.append('.')
+
 from apis import google_nlp
 import os
 import pytest

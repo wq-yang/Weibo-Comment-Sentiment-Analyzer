@@ -1,3 +1,6 @@
+import sys
+sys.path.append('.')
+
 from apis import weibo_api
 from config.Weibo_API_Config import *  # local test
 
