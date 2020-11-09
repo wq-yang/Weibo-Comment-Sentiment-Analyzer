@@ -81,7 +81,7 @@ Analyzed comments of a weibo about Eddie Van Halen's death.
 
 - Manual Test
 
-  Because Weibo API's initialization always needs authorization (user login and authorize to my app, to prevent abusing), it seems to be unable to test it automatically. I tested several cases manually:
+  Because Weibo API's initialization always needs authorization (Weibo sends you a link, then user login and authorize to my app, redirect to a new website containing your authorization code, which is distinct for every login), it seems impossible to test it automatically. I tested several cases manually:
 
   - Normal test: get results.
   - Invalid Weibo API credentials: Error code 21324 in authorization page, prompt `Authorization failed... Input Y to try again...` after some input.
