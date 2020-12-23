@@ -1,13 +1,13 @@
-# Social Media Analyzer
+# Weibo Comment Sentiment Analyzer
 
-Project 2 for EC601
+Project 2 of EC601
 
 *p.s. Because my application of Twitter Developer Account was rejected (for twice...), I made a comment analyzer for [Weibo](https://www.weibo.com), a Chinese social media platform similar to Twitter.*
 
 ## Description
 
 - **Name:** weibo comment sentiment analyzer
-- **Category:** command line tool, written in python
+- **Category:** python script
 - **API used:** 
   - [Google Natural Language](https://cloud.google.com/natural-language/)
   - [weibo](lxyu.github.io/weibo/) (a concise third-party weibo python sdk which support python3)
